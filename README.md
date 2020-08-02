@@ -113,3 +113,12 @@ Apesar de ter autenticação e sistema de login, não foi implementado no fronte
 #### `POST` /developers/auto
 - Esta rota vai adicionar usuarios aleatorios automaticamente ao banco
 - Query Params `quantity*`
+
+
+## Scripts
+
+A pasta root do backend possui um arquivo chamado `scripts.js`, este preenche automaticamente o banco, caso queira usa-lo por favor modificar a URL do seu banco.
+
+Para inicia-lo basta apenas executar `node scripts.js`
+
+Por favor dê preferencia para o botão `Adicionar usuarios` no frontend caso queira adicionar usuarios automaticamente.
