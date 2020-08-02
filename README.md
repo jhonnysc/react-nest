@@ -1,6 +1,7 @@
 ## O que é?
 
 Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos em Typescript ❤️.
+
 - Backend em NestJS
 - Frontend em ReactJS
 - MongoDB
@@ -12,7 +13,7 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 - `sudo docker network create myprojectnetwork`
 - `sudo docker-compose up --build` no root (`--build` só necessario na primeira vez)
 - Docker irá instalar as depedencias automaticamente.
-  
+
 Se você tem docker, basta apenas rodar o docker-compose presente no root com o comando `docker-compose up --build`, isto pode demorar alguns minutos devido a instalação de depedencias. As configurações do docker já vem com banco pre-configurado e envs, nenhuma migração ou criação de tabelas serão necessarias.
 
 Caso não tiver docker, ambos os repos podem ser executados manualmente usando comando `yarn start:dev` porem será necessario preencher os .envs, em especial do backend e tambem será necessario subir um banco local ou remoto de mongo.
@@ -32,16 +33,17 @@ Frontend possui apenas uma page no root `/`
 Caso for rodar manualmente, configurar os envs de acordo com o IP do backend.
 
 ### Features
-  - SPA (apesar de ter apenas uma rota)
-  - Listar todos os usuarios
-  - Criar usuario
-  - Atualizar Usuario
-  - Deletar Usuario
-  - Paginação
-  - Busca por nome e email
-  - Organização por nome do campo
-  - Botão para adicionar usuarios automaticamente
-  - Totalmente integrado com o backend
+
+- SPA (apesar de ter apenas uma rota)
+- Listar todos os usuarios
+- Criar usuario
+- Atualizar Usuario
+- Deletar Usuario
+- Paginação
+- Busca por nome e email
+- Organização por nome do campo
+- Botão para adicionar usuarios automaticamente
+- Totalmente integrado com o backend
 
 ## Backend
 
@@ -50,6 +52,14 @@ Backend possui inumeras rotas, irei listar as rotas aqui porem o backend possui 
 Caso for rodar manualmente, configurar os envs, em especial o endereço do banco (mongo).
 
 Apesar de ter autenticação e sistema de login, não foi implementado no frontend neste repositorio por questões de simplicidade.
+
+### Por quê?
+
+Algumas explicações:
+
+- Backend já possui varias features devido ao fato de eu ter usado um template criado por mim mesmo, [link aqui.](https://github.com/remxk2/nestjs-starter)
+- Existem 2 controllers pra usuarios, um deles com rotas `/perms`, como já tinha algumas features implementadas no backend como ACL e JWT, eu achei interessante deixar essas rotas implementadas apenas para visualização e testes caso queira.
+- Por que usar tantos `index.ts`? Para o codigo não ficar carregado, nós podemos criar varios services referentes ao modulo, cada um com uma responsabilidade, então para não ficar importando os services pelos nomes, o `index.ts` junta todos eles e os exporta, isto facilita na hora de importar e deixa o codigo bem mais organizado.
 
 ### Features
 
@@ -63,12 +73,13 @@ Apesar de ter autenticação e sistema de login, não foi implementado no fronte
 - Swagger
 
 ### Swagger
-- Para ver a documentação gerada pelo Swagger acessar a rota `http://localhost:3100/api` do backend (alterar porta caso necessario) 
 
+- Para ver a documentação gerada pelo Swagger acessar a rota `http://localhost:3100/api` do backend (alterar porta caso necessario)
 
 ### Rotas
 
 #### `POST` /auth/login
+
 ```json
 {
   "email": "string",
@@ -83,6 +94,7 @@ Apesar de ter autenticação e sistema de login, não foi implementado no fronte
 - Query Params `limit*` `page*` `email` `name` `sort_by`
 
 #### `UPDATE` /developers/:id
+
 ```json
 {
   "name": "string",
@@ -92,15 +104,14 @@ Apesar de ter autenticação e sistema de login, não foi implementado no fronte
   "hobby": "string",
   "dayOfBirth": "2020-08-02T04:27:02.913Z",
   "age": 0,
-  "roles": [
-    "string"
-  ]
+  "roles": ["string"]
 }
 ```
 
 #### `GET` /developers/:id
 
 #### `POST` /developers
+
 ```json
 {
   "name": "string",
@@ -110,16 +121,14 @@ Apesar de ter autenticação e sistema de login, não foi implementado no fronte
   "hobby": "string",
   "dayOfBirth": "2020-08-02T04:27:02.913Z",
   "age": 0,
-  "roles": [
-    "string"
-  ]
+  "roles": ["string"]
 }
 ```
 
 #### `POST` /developers/auto
+
 - Esta rota vai adicionar usuarios aleatorios automaticamente ao banco
 - Query Params `quantity*`
-
 
 ## Scripts
 
