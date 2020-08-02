@@ -6,5 +6,4 @@ fi
 
 yarn --cwd ./frontend
 yarn --cwd ./backend
-docker network create myprojectnetwork
 docker-compose -f ./backend/docker-compose.yml up --build & docker-compose -f ./frontend/docker-compose.yml up --build 

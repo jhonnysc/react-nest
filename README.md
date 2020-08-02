@@ -21,9 +21,7 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 
 Comandos devem ser exeuctado na pasta root
 
-- `sudo docker network create myprojectnetwork`
 - Todas as envs são controladas pelo `.env` na root
-- `sudo docker network create myprojectnetwork`
 - `sudo docker-compose up --build` no root (`--build` só necessario na primeira vez)
 - Docker irá instalar as depedencias automaticamente.
 

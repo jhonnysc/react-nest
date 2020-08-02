@@ -1,7 +1,4 @@
 version: "3"
-networks:
-  myprojectnetwork:
-    external: true
 services:
   mongo:
     image: mongo

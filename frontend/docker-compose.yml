@@ -1,7 +1,4 @@
 version: "3"
-networks:
-  myprojectnetwork:
-    external: true
 services:
   frontend:
     image: node:12.18.3-alpine
@@ -17,5 +14,3 @@ services:
     restart: always
     ports:
       - ${REACT_APP_PORT}:${REACT_APP_PORT}
-    networks:
-      - myprojectnetwork

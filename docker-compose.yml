@@ -1,7 +1,5 @@
 version: "3"
 networks:
-  myprojectnetwork:
-    external: true
 services:
   mongo:
     image: mongo
@@ -37,5 +35,3 @@ services:
     restart: always
     ports:
       - ${REACT_APP_PORT}:${REACT_APP_PORT}
-    networks:
-      - myprojectnetwork
