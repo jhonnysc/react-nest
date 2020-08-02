@@ -7,6 +7,12 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 
 ## Como rodar?
 
+### Docker
+
+- `sudo docker network create myprojectnetwork`
+- `sudo docker-compose up --build` no root
+- Docker irá instalar as depedencias automaticamente.
+  
 Se você tem docker, basta apenas rodar o docker-compose presente no root com o comando `docker-compose up --build`, isto pode demorar alguns minutos devido a instalação de depedencias. As configurações do docker já vem com banco pre-configurado e envs, nenhuma migração ou criação de tabelas serão necessarias.
 
 Caso não tiver docker, ambos os repos podem ser executados manualmente usando comando `yarn start:dev` porem será necessario preencher os .envs, em especial do backend e tambem será necessario subir um banco local ou remoto de mongo.
