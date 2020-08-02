@@ -9,13 +9,31 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 
 ### Docker
 
+### Existem tres modos para iniciar
+
+#### Build com Dockerfile
+
+Comandos devem ser exeuctado na pasta root
+
+- Todas as envs são controladas pelo `.env` na root
 - `sudo docker network create myprojectnetwork`
 - `sudo docker-compose up --build` no root
 - Docker irá instalar as depedencias automaticamente.
-  
-Se você tem docker, basta apenas rodar o docker-compose presente no root com o comando `docker-compose up --build`, isto pode demorar alguns minutos devido a instalação de depedencias. As configurações do docker já vem com banco pre-configurado e envs, nenhuma migração ou criação de tabelas serão necessarias.
 
-Caso não tiver docker, ambos os repos podem ser executados manualmente usando comando `yarn start:dev` porem será necessario preencher os .envs, em especial do backend e tambem será necessario subir um banco local ou remoto de mongo.
+#### Pelo script no root usando docker-compose
+
+- `sudo ./start.sh`
+- Caso não consiga rodar o script, executar `chmod +x start.sh` e tente novamente.
+- Envs são controladas pelos `.env` em suas respectivas pastas.
+
+#### Manual
+
+- Vá em cada pasta (backend e frontend)
+- Configure os `.env` de acordo.
+- Instale as depedencias `yarn`
+- Inicie as aplicações `yarn start`
+
+**Nota que o metodo manual irá exigir que você suba um banco local ou nuvem.**
 
 Caso for usar este repositorio para algo, por favor adicionar os .envs ao `.gitignore`.
 

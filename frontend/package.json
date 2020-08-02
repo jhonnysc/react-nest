@@ -52,9 +52,9 @@
     "yup": "^0.29.2"
   },
   "scripts": {
-    "start": "env-cmd -f ./env/prod.env react-app-rewired start",
-    "start:dev": "env-cmd -f ./env/dev.env react-app-rewired start",
-    "start:hml": "env-cmd -f ./env/hml.env react-app-rewired start",
+    "start": "PORT=$REACT_APP_PORT env-cmd -f ./env/prod.env react-app-rewired start",
+    "start:dev": "PORT=$REACT_APP_PORT env-cmd -f ./env/dev.env react-app-rewired start",
+    "start:hml": "PORT=$REACT_APP_PORT env-cmd -f ./env/hml.env react-app-rewired start",
     "build": "env-cmd -f ./env/prod.env react-app-rewired build",
     "test": "react-app-rewired test",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --max-warnings 0",
