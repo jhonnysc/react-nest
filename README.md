@@ -17,6 +17,7 @@ Caso for usar este repositorio para algo, por favor adicionar os .envs ao `.giti
 
 - Backend `http://localhost:3100/v1`
 - Frontend `http://localhost:3000`
+- Alterar portas caso necessario!
 
 ## Frontend
 
