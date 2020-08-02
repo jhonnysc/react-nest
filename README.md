@@ -10,7 +10,7 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 
 ### Docker
 
-- **Primeiramente criar a network `docker network create myprojectnetwork`**
+- **Primeiramente criar a network** `sudo docker network create myprojectnetwork`
 
 #### Build com Dockerfile
 
