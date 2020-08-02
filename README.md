@@ -121,4 +121,4 @@ A pasta root do backend possui um arquivo chamado `scripts.js`, este preenche au
 
 Para inicia-lo basta apenas executar `node scripts.js`
 
-Por favor dê preferencia para o botão `Adicionar usuarios` no frontend caso queira adicionar usuarios automaticamente.
+**Por favor dê preferencia para o botão `Adicionar usuarios` no frontend caso queira adicionar usuarios automaticamente.**
