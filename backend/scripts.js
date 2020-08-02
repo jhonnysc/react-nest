@@ -1,5 +1,5 @@
-const faker = require('faker');
-const mongoose = require('mongoose');
+const faker = require("faker");
+const mongoose = require("mongoose");
 
 const mongooseTypes = {
   required: {
@@ -40,7 +40,7 @@ const mongooseTypes = {
   },
 };
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect("mongodb://localhost:27017/myproject");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -58,25 +58,25 @@ const UserSchema = new mongoose.Schema(
   },
   {
     timestamps: {
-      createdAt: 'createdAt',
-      updatedAt: 'updatedAt',
+      createdAt: "createdAt",
+      updatedAt: "updatedAt",
     },
   },
 );
 
-const User = mongoose.model('user', UserSchema);
+const User = mongoose.model("user", UserSchema);
 
 (async () => {
   const promises = [];
   for (let i = 0; i < 500; i++) {
     const x = new User({
       name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-      sex: faker.random.arrayElement(['Male', 'Female']),
+      sex: faker.random.arrayElement(["Male", "Female"]),
       age: faker.random.number(60),
       hobby: faker.random.word(),
       dayOfBirth: faker.date.recent(),
       email: faker.internet.email(),
-      roles: ['USER'],
+      roles: ["USER"],
       password: faker.internet.password(),
     }).save();
     promises.push(x);
