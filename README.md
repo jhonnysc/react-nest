@@ -13,6 +13,11 @@ Caso não tiver docker, ambos os repos podem ser executados manualmente usando c
 
 Caso for usar este repositorio para algo, por favor adicionar os .envs ao `.gitignore`.
 
+## Endereços
+
+- Backend `http://localhost:3100/v1`
+- Frontend `http://localhost:3000`
+
 ## Frontend
 
 Frontend possui apenas uma page no root `/`
@@ -49,6 +54,9 @@ Apesar de ter autenticação e sistema de login, não foi implementado no fronte
 - Rotas autorizadas
 - ACL (Sistema de permissões)
 - Swagger
+
+### Swagger
+- Para ver a documentação gerada pelo Swagger acessar a rota `http://localhost:3100/api` do backend (alterar porta caso necessario) 
 
 
 ### Rotas
