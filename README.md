@@ -10,8 +10,6 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 
 ### Docker
 
-### Existem tres modos para iniciar
-
 #### Build com Dockerfile
 
 Comandos devem ser exeuctado na pasta root
@@ -27,7 +25,7 @@ Comandos devem ser exeuctado na pasta root
 - Caso não consiga rodar o script, executar `chmod +x start.sh` e tente novamente.
 - Envs são controladas pelos `.env` em suas respectivas pastas.
 
-#### Manual
+### Manual
 
 - Vá em cada pasta (backend e frontend)
 - Configure os `.env` de acordo.
