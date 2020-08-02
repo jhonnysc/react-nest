@@ -40,6 +40,7 @@ Caso for usar este repositorio para algo, por favor adicionar os .envs ao `.giti
 
 - Backend `http://localhost:4200/v1`
 - Frontend `http://localhost:4100`
+- Documentação `http://localhost:4200/api`
 - Alterar portas caso necessario!
 
 ## Frontend
@@ -90,7 +91,7 @@ Algumas explicações:
 
 ### Swagger
 
-- Para ver a documentação gerada pelo Swagger acessar a rota `http://localhost:3100/api` do backend (alterar porta caso necessario)
+- Para ver a documentação gerada pelo Swagger acessar a rota `http://localhost:4200/api` do backend (alterar porta caso necessario)
 
 ### Rotas
 
