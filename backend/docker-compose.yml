@@ -12,7 +12,11 @@ services:
     ports:
       - 27017:27017
   backend:
-    build: ./backend
+    image: node:12.18.3-alpine
+    working_dir: /usr/src/backend/app
+    command: yarn start
+    volumes:
+      - ./:/usr/src/backend/app
     environment:
       - NODE_ENV=${NODE_ENV}
       - MONGO_URL=${MONGO_URL}
@@ -20,22 +24,8 @@ services:
       - ENCRYPTION_KEY=${ENCRYPTION_KEY}
       - JWT_SECRET=${JWT_SECRET}
       - JWT_EXP_TIME=${JWT_EXP_TIME}
-    container_name: backendapp
     restart: always
     ports:
       - ${APP_PORT}:${APP_PORT}
     links:
       - mongo
-  frontend:
-    stdin_open: true
-    build: ./frontend
-    environment:
-      - NODE_ENV=${NODE_ENV}
-      - REACT_APP_API_URL=http://localhost:${APP_PORT}/v1
-      - REACT_APP_PORT=${REACT_APP_PORT}
-    container_name: frontendapp
-    restart: always
-    ports:
-      - ${REACT_APP_PORT}:${REACT_APP_PORT}
-    networks:
-      - myprojectnetwork

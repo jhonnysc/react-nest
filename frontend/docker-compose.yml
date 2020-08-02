@@ -1,0 +1,21 @@
+version: "3"
+networks:
+  myprojectnetwork:
+    external: true
+services:
+  frontend:
+    image: node:12.18.3-alpine
+    stdin_open: true
+    command:  yarn start
+    working_dir: /usr/src/frontend/app
+    volumes:
+      - ./:/usr/src/frontend/app
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - REACT_APP_API_URL=http://localhost:${APP_PORT}/v1
+      - REACT_APP_PORT=${REACT_APP_PORT}
+    restart: always
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    networks:
+      - myprojectnetwork
