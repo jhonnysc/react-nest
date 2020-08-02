@@ -10,7 +10,7 @@ Este repositorio é um exemplo de uma aplicação usando ReactJS e NestJS, ambos
 ### Docker
 
 - `sudo docker network create myprojectnetwork`
-- `sudo docker-compose up --build` no root
+- `sudo docker-compose up --build` no root (`--build` só necessario na primeira vez)
 - Docker irá instalar as depedencias automaticamente.
   
 Se você tem docker, basta apenas rodar o docker-compose presente no root com o comando `docker-compose up --build`, isto pode demorar alguns minutos devido a instalação de depedencias. As configurações do docker já vem com banco pre-configurado e envs, nenhuma migração ou criação de tabelas serão necessarias.
